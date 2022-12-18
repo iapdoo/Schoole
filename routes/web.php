@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ClassRoom\ClassRoomController;
 use App\Http\Controllers\Admin\Grade\GradeController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -37,9 +38,18 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
 ], function () {
 
     Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
-
-
-    Route::resource('Grade', GradeController::class);
+############################ START Grades ROUTE ########################################################################
+    Route::get('/Grades', [GradeController::class, 'index'])->name('Grades.index');
+    Route::post('/Grades/store', [GradeController::class, 'store'])->name('Grades.store');
+    Route::post('/Grades/update/{id}', [GradeController::class, 'update'])->name('Grades.update');
+    Route::post('/Grades/destroy/{id}', [GradeController::class, 'destroy'])->name('Grades.destroy');
+############################ END Grades ROUTE ##########################################################################
+############################ START Classrooms ROUTE ####################################################################
+    Route::get('/Classrooms', [ClassRoomController::class, 'index'])->name('Classrooms.index');
+    Route::post('/Classrooms/store', [ClassRoomController::class, 'store'])->name('Classrooms.store');
+    Route::post('/Classrooms/update/{id}', [ClassRoomController::class, 'update'])->name('Classrooms.update');
+    Route::post('/Classrooms/destroy/{id}', [ClassRoomController::class, 'destroy'])->name('Classrooms.destroy');
+############################ END Classrooms ROUTE ######################################################################
 
 
 });
