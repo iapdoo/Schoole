@@ -29,18 +29,19 @@ class ClassRoomController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreClassRoom $request)
     {
+//      return dd($request);
 //        return dd($request->List_Classes);
 
 //        return dd($request->List_Classes);
 //        if (ClassRoom::where('Name_Class->ar', $request->Name_Class)->orWhere('Name_Class->en', $request->Name_Class_en)->exists()) {
 //            return redirect()->back()->withErrors(['error' => trans('massage.exists')]);
 //        }
-        $this->validate($request, [
-            'Name_Class' => 'required',
-            'Name_Class_en' => 'required',
-        ]);
+//        $this->validate($request, [
+//            'Name_Class' => 'required',
+//            'Name_Class_en' => 'required',
+//        ]);
         try {
             $List_Classes = $request->List_Classes;
             foreach ($List_Classes as $List_Class) {

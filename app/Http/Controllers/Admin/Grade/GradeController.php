@@ -29,9 +29,9 @@ class GradeController extends Controller
      */
     public function store(StoreGrades $request)
     {
-        if(Grade::where('Name->ar',$request->Name)->orWhere('Name->en',$request->Name_en)->exists()){
-            return redirect()->back()->withErrors(['error'=>trans('massage.exists')]);
-        }
+//        if(Grade::where('Name->ar',$request->Name)->orWhere('Name->en',$request->Name_en)->exists()){
+//            return redirect()->back()->withErrors(['error'=>trans('massage.exists')]);
+//        }
         try {
 
             $Grade=new Grade();

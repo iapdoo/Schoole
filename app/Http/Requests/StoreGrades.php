@@ -33,7 +33,9 @@ class StoreGrades extends FormRequest
     {
         return [
             'Name.required'=>trans('validation.required'),
+            'Name.unique'=>trans('validation.unique'),
             'Name_en.required'=>trans('validation.required'),
+            'Name_en.unique'=>trans('validation.unique'),
         ];
     }
 }

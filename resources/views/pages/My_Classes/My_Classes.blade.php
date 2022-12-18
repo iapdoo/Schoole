@@ -82,7 +82,7 @@
                                             </div>
                                             <div class="modal-body">
                                                 <!-- add_form -->
-                                                <form action="{{ route('Grades.update', $My_Class->id) }}" method="post">
+                                                <form action="{{ route('Classrooms.update', $My_Class->id) }}" method="post">
                                                     {{ method_field('patch') }}
                                                     @csrf
                                                     <div class="row">
@@ -92,7 +92,7 @@
                                                                 :</label>
                                                             <input id="Name" type="text" name="Name"
                                                                    class="form-control"
-                                                                   value=""
+                                                                   value="{{$My_Class->getTranslation('Name_Class','ar')}}"
                                                                    required>
                                                         </div>
                                                         <div class="col">
@@ -100,17 +100,26 @@
                                                                    class="mr-sm-2">{{ trans('grades.stage_name_en') }}
                                                                 :</label>
                                                             <input type="text" class="form-control"
-                                                                   value=""
+                                                                   value="{{$My_Class->getTranslation('Name_Class','en')}}"
                                                                    name="Name_en" required>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label
-                                                            for="exampleFormControlTextarea1">{{ trans('grades.Notes') }}
+                                                            for="exampleFormControlTextarea1">{{ trans('My_Classes_trans.Name_Grade') }}
                                                             :</label>
-                                                        <textarea class="form-control" name="Notes"
-                                                                  id="exampleFormControlTextarea1"
-                                                                  rows="3"></textarea>
+                                                        <select class="form-control form-control-lg"
+                                                                id="exampleFormControlSelect1" name="Grade_id">
+                                                            <option value="{{ $My_Class->Grades->id }}">
+                                                                {{ $My_Class->Grades->Name }}
+                                                            </option>
+                                                            @foreach ($Grades as $Grade)
+                                                                <option value="{{ $Grade->id }}">
+                                                                    {{ $Grade->Name }}
+                                                                </option>
+                                                            @endforeach
+                                                        </select>
+
                                                     </div>
                                                     <br><br>
 

@@ -24,15 +24,17 @@ class StoreClassRoom extends FormRequest
     public function rules()
     {
         return [
-            'Name_Class'=>'required|unique:class_rooms,Name_Class->ar,'.$this->id,
-            'Name_Class_en'=>'required|unique:class_rooms,Name_Class->en,'.$this->id,
+            'List_Classes.*.Name_Class'=>'required|unique:class_rooms,Name_Class->ar,'.$this->id,
+            'List_Classes.*.Name_Class_en'=>'required|unique:class_rooms,Name_Class->en,'.$this->id,
         ];
     }
     public function messages()
     {
         return [
             'Name_Class.required'=>trans('validation.required'),
+            'Name_Class.unique'=>trans('validation.unique'),
             'Name_Class_en.required'=>trans('validation.required'),
+            'Name_Class_en.unique'=>trans('validation.unique'),
         ];
     }
 }
