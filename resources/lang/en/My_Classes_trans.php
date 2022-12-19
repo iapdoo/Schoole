@@ -18,6 +18,8 @@ return [
     'Edit'=>'Edit',
     'Delete'=>'Delete',
     'Close' => 'Close',
+    'btn_delete_all' => 'Delete All Checked',
+    'Search_By_Grade' => 'Search By Grade',
 
 ];
 

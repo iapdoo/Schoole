@@ -9,11 +9,7 @@ use Illuminate\Http\Request;
 
 class GradeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $grades=Grade::all();
@@ -21,12 +17,7 @@ class GradeController extends Controller
         return view('pages.Grades.Grade',compact('grades'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(StoreGrades $request)
     {
 //        if(Grade::where('Name->ar',$request->Name)->orWhere('Name->en',$request->Name_en)->exists()){
@@ -55,13 +46,7 @@ class GradeController extends Controller
     }
 
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(StoreGrades $request, $id)
     {
 //        return  dd($request);
@@ -85,18 +70,16 @@ class GradeController extends Controller
 
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         try {
             $grades=Grade::find($id);
             if (!$grades){
                 return redirect()->back()->withErrors(['error'=>trans('massage.no')]);
+            }
+            $ClassRoom = $grades->ClassRoom();
+            if (isset($ClassRoom) && $ClassRoom->count() > 0) {
+                return redirect()->back()->withErrors(['error'=>trans('massage.noPermation')]);
             }
             $grades->delete();
             toastr()->success(trans('massage.delete'));

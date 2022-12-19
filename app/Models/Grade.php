@@ -19,6 +19,9 @@ class Grade extends Model
         'Notes',
     ];
     public function ClassRoom(){
-        return $this->hasMany('app\Models\ClassRoom','Grade_id','id');
+        return $this->hasMany('App\Models\ClassRoom','Grade_id','id');
+    }
+    public function Sections(){
+        return $this->hasMany('App\Models\Section','Grade_id','id');
     }
 }

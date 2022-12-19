@@ -7,5 +7,6 @@ return [
    'delete'=>'Data has been deleted successfully!',
    'error'=>'Error Try Again ',
    'no'=>'This Dose Not Available ',
+   'noPermation'=>'Can Not Delete This Has Child ',
    'exists'=>'This Name Is Used ',
 ];

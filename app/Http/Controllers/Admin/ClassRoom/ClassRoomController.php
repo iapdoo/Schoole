@@ -10,11 +10,7 @@ use Illuminate\Http\Request;
 
 class ClassRoomController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $My_Classes = Classroom::all();
@@ -23,25 +19,8 @@ class ClassRoomController extends Controller
     }
 
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(StoreClassRoom $request)
     {
-//      return dd($request);
-//        return dd($request->List_Classes);
-
-//        return dd($request->List_Classes);
-//        if (ClassRoom::where('Name_Class->ar', $request->Name_Class)->orWhere('Name_Class->en', $request->Name_Class_en)->exists()) {
-//            return redirect()->back()->withErrors(['error' => trans('massage.exists')]);
-//        }
-//        $this->validate($request, [
-//            'Name_Class' => 'required',
-//            'Name_Class_en' => 'required',
-//        ]);
         try {
             $List_Classes = $request->List_Classes;
             foreach ($List_Classes as $List_Class) {
@@ -57,30 +36,66 @@ class ClassRoomController extends Controller
             return $exception;
             return redirect()->back()->withErrors(['error' => trans('massage.error')]);
         }
-        return dd($request->List_Classes);
     }
 
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Models\ClassRoom $classRoom
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, ClassRoom $classRoom)
+
+    public function update(StoreClassRoom $request, $classRoom_id)
     {
-        //
+//        return dd($request);
+        try {
+            $classRoom = ClassRoom::find($classRoom_id);
+            if (!$classRoom) {
+                return redirect()->back()->withErrors(['error' => trans('massage.no')]);
+            }
+            $classRoom->update([
+                $classRoom->Name_Class = ['en' => $request->Name_en, 'ar' => $request->Name],
+                $classRoom->Grade_id = $request->Grade_id,
+            ]);
+            toastr()->success(trans('massage.update'));
+            return redirect()->route('Classrooms.index');
+
+        } catch (\Exception $exception) {
+            return redirect()->back()->withErrors(['error' => trans('massage.error')]);
+        }
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param \App\Models\ClassRoom $classRoom
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(ClassRoom $classRoom)
+
+    public function destroy($classRoom_id)
     {
-        //
+        try {
+            $classRoom = ClassRoom::find($classRoom_id);
+            if (!$classRoom) {
+                return redirect()->back()->withErrors(['error' => trans('massage.no')]);
+            }
+            $classRoom->delete();
+            toastr()->success(trans('massage.delete'));
+            return redirect()->route('Classrooms.index');
+        } catch (\Exception $exception) {
+            return redirect()->back()->withErrors(['error' => trans('massage.error')]);
+        }
+
+    }
+
+    public function delete_all(Request $request)
+    {
+
+        try {
+            $delete_all_id = explode(",", $request->delete_all_id);
+//            return dd($delete_all_id);
+            ClassRoom::whereIn('id', $delete_all_id)->delete();
+            toastr()->success(trans('massage.delete'));
+            return redirect()->route('Classrooms.index');
+        } catch (\Exception $exception) {
+            return redirect()->back()->withErrors(['error' => trans('massage.error')]);
+        }
+    }
+    public function Filter_Classes(Request $request){
+
+            $Grades=Grade::all();
+            $Search=ClassRoom::select('*')->where('Grade_id',$request->Grade_id)->get();
+        return view('pages.My_Classes.My_Classes', compact('Grades'))->withDetails($Search);
+
     }
 }

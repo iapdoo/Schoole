@@ -20,6 +20,8 @@ return [
     'Edit' => 'تعديل',
     'Delete' => 'حذف',
     'Close' => 'اغلاق',
+    'btn_delete_all' => 'حذف جميع العلامات ',
+    'Search_By_Grade' => 'يحث باسم المرحله ',
 
 
 

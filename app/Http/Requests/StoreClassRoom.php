@@ -24,8 +24,8 @@ class StoreClassRoom extends FormRequest
     public function rules()
     {
         return [
-            'List_Classes.*.Name_Class'=>'required|unique:class_rooms,Name_Class->ar,'.$this->id,
-            'List_Classes.*.Name_Class_en'=>'required|unique:class_rooms,Name_Class->en,'.$this->id,
+            'List_Classes.*.Name_Class'=>'required',
+            'List_Classes.*.Name_Class_en'=>'required',
         ];
     }
     public function messages()

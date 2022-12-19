@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\ClassRoom\ClassRoomController;
 use App\Http\Controllers\Admin\Grade\GradeController;
+use App\Http\Controllers\Admin\Section\SectionController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -49,7 +50,19 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
     Route::post('/Classrooms/store', [ClassRoomController::class, 'store'])->name('Classrooms.store');
     Route::post('/Classrooms/update/{id}', [ClassRoomController::class, 'update'])->name('Classrooms.update');
     Route::post('/Classrooms/destroy/{id}', [ClassRoomController::class, 'destroy'])->name('Classrooms.destroy');
+    Route::post('delete_all', [ClassRoomController::class, 'delete_all'])->name('delete_all');
+    Route::post('Filter_Classes', [ClassRoomController::class, 'Filter_Classes'])->name('Filter_Classes');
+
 ############################ END Classrooms ROUTE ######################################################################
+############################ START Sections ROUTE ####################################################################
+    Route::get('/Sections', [SectionController::class, 'index'])->name('Sections.index');
+    Route::post('/Sections/store', [SectionController::class, 'store'])->name('Sections.store');
+    Route::post('/Sections/update/{id}', [SectionController::class, 'update'])->name('Sections.update');
+    Route::post('/Sections/destroy/{id}', [SectionController::class, 'destroy'])->name('Sections.destroy');
+//    Route::post('delete_all', [SectionController::class, 'delete_all'])->name('delete_all');
+    Route::get('/classes/{id}', [SectionController::class, 'getclasses'])->name('getclasses');
+
+############################ END sections ROUTE ######################################################################
 
 
 });

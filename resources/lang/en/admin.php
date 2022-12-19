@@ -12,7 +12,6 @@ return [
     'Grades_list'=>'Grades list',
     'classes'=>'classes',
     'List_classes'=>'List classes',
-    'sections'=>'sections',
     'students'=>'students',
     'Teachers'=>'Teachers',
     'Parents'=>'Parents',
@@ -24,7 +23,9 @@ return [
     'Settings'=>'Settings',
     'Users'=>'Users',
     'Copyright' => 'Copyright',
-    'Name_Programer' => 'Name Programmer'
+    'Name_Programer' => 'Name Programmer',
+    'sections' => 'Sections',
+    'List_sections' => 'List Sections',
 
 
 ];
