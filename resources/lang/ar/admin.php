@@ -16,7 +16,6 @@ return [
     'classes'=>'الصفوف',
     'List_classes'=>'قائمة الصفوف الدراسية',
     'students'=>'الطلاب',
-    'Teachers'=>'المعلمين',
     'Parents'=>'اولياء الامور',
     'Accounts'=>'الحسابات',
     'Attendance'=>'الحضور والغياب',
@@ -28,6 +27,13 @@ return [
     'Copyright' => 'جميع الحقوق محفوظة ',
     'Name_Programer' => 'سمير جمال مورا سوفت',
 
+    'List_Parents'=>'قائمة اولياء الامور',
+    'Add_Parent'=>'اضافة ولي امر',
+
     'sections' => 'الاقسام',
     'List_sections' => ' قائمه الاقسام الدراسيه',
+
+
+    'Teachers'=>'المعلمين',
+    'List_Teachers'=>' قائمه المعلمين',
 ];

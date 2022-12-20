@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\ClassRoom\ClassRoomController;
 use App\Http\Controllers\Admin\Grade\GradeController;
 use App\Http\Controllers\Admin\Section\SectionController;
+use App\Http\Controllers\Admin\Teachers\TeacherController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -63,8 +64,23 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
     Route::get('/classes/{id}', [SectionController::class, 'getclasses'])->name('getclasses');
 
 ############################ END sections ROUTE ######################################################################
+    //==============================  START parents ROUTE============================
 
+    Route::view('add_parent','livewire.show_Form');
+    //============================== END parents ROUTE============================
+############################ START Teachers ROUTE ####################################################################
+    Route::get('/Teachers', [TeacherController::class, 'index'])->name('Teachers.index');
+    Route::get('/Teachers/create', [TeacherController::class, 'create'])->name('Teachers.create');
+    Route::get('/Teachers/edit/{id}', [TeacherController::class, 'edit'])->name('Teachers.edit');
+    Route::post('/Teachers/store', [TeacherController::class, 'store'])->name('Teachers.store');
+    Route::post('/Teachers/destroy/{id}', [TeacherController::class, 'destroy'])->name('Teachers.destroy');
+    Route::post('/Teachers/update/{id}', [TeacherController::class, 'update'])->name('Teachers.update');
+    Route::post('/Teachers/destroy/{id}', [TeacherController::class, 'destroy'])->name('Teachers.destroy');
 
+////    Route::post('delete_all', [SectionController::class, 'delete_all'])->name('delete_all');
+//    Route::get('/classes/{id}', [SectionController::class, 'getclasses'])->name('getclasses');
+
+############################ END Teachers ROUTE ######################################################################
 });
 
 

@@ -13,7 +13,6 @@ return [
     'classes'=>'classes',
     'List_classes'=>'List classes',
     'students'=>'students',
-    'Teachers'=>'Teachers',
     'Parents'=>'Parents',
     'Accounts'=>'Accounts',
     'Attendance'=>'Attendance',
@@ -26,6 +25,14 @@ return [
     'Name_Programer' => 'Name Programmer',
     'sections' => 'Sections',
     'List_sections' => 'List Sections',
+    'Add_student'=>'Add Student',
+    'information_student'=>'Information Students',
+    'Students_upgrade'=>'Students Upgrade',
+    'Graduate_students'=>'Graduate Students',
+    'Add_Parent'=>'Add Parent',
+    'List_Parents'=>'List Parents',
+    'Teachers'=>'Teachers',
+    'List_Teachers'=>'List Teachers',
 
 
 ];

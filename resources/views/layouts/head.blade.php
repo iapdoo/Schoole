@@ -10,6 +10,7 @@
 @yield('css')
 <!--- Style css -->
 <link href="{{ URL::asset('assets/css/style.css') }}" rel="stylesheet">
+<link href="{{ asset('css/wizard.css') }}" rel="stylesheet">
 
 <!--- Style css -->
 @if (App::getLocale() == 'en')
