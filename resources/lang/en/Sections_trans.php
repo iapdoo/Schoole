@@ -2,6 +2,7 @@
 
 return [
 
+    'Name_Teacher' =>  'Choice Name Teacher',
     'title_page' => 'sections',
     'List_Grade' => 'List_Grade',
     'add_section' => 'Add Section ',

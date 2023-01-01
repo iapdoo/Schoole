@@ -25,7 +25,7 @@ class StoreTeachers extends FormRequest
     {
         return [
             'Email' => 'required|unique:teachers,Email,'.$this->id,
-            'Password' => 'required',
+            'Password' => 'required_without:id',
             'Name_ar' => 'required',
             'Name_en' => 'required',
             'Specialization_id' => 'required',

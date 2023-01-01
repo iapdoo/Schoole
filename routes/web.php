@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\ClassRoom\ClassRoomController;
 use App\Http\Controllers\Admin\Grade\GradeController;
 use App\Http\Controllers\Admin\Section\SectionController;
+use App\Http\Controllers\Admin\Student\StudentController;
 use App\Http\Controllers\Admin\Teachers\TeacherController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -81,6 +82,18 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
 //    Route::get('/classes/{id}', [SectionController::class, 'getclasses'])->name('getclasses');
 
 ############################ END Teachers ROUTE ######################################################################
+    ############################ START Students ROUTE ####################################################################
+    Route::get('/Students', [StudentController::class, 'index'])->name('Students.index');
+    Route::get('/Students/create', [StudentController::class, 'create'])->name('Students.create');
+    Route::get('/Students/edit/{id}', [StudentController::class, 'edit'])->name('Students.edit');
+    Route::post('/Students/store', [StudentController::class, 'store'])->name('Students.store');
+    Route::post('/Students/destroy/{id}', [StudentController::class, 'destroy'])->name('Students.destroy');
+    Route::post('/Students/update/{id}', [StudentController::class, 'update'])->name('Students.update');
+    Route::post('/Students/destroy/{id}', [StudentController::class, 'destroy'])->name('Students.destroy');
+
+
+############################ END Students ROUTE ######################################################################
+
 });
 
 

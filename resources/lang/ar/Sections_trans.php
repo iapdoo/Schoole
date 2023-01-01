@@ -1,7 +1,7 @@
 <?php
 
 return [
-
+    'Name_Teacher'=>'اختر المعلم',
     'title_page' => 'الاقسام',
     'List_Grade' => 'List_Grade',
     'add_section' => 'اضافة قسم',

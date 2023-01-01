@@ -21,6 +21,7 @@ class ClassRoomController extends Controller
 
     public function store(StoreClassRoom $request)
     {
+
         try {
             $List_Classes = $request->List_Classes;
             foreach ($List_Classes as $List_Class) {

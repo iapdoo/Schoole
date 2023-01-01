@@ -33,6 +33,7 @@ return [
     'List_Parents'=>'List Parents',
     'Teachers'=>'Teachers',
     'List_Teachers'=>'List Teachers',
+    'AddStudents'=>'Add New Students',
 
 
 ];

@@ -36,4 +36,5 @@ return [
 
     'Teachers'=>'المعلمين',
     'List_Teachers'=>' قائمه المعلمين',
+    'AddStudents'=>'اضافه طالب ',
 ];

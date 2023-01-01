@@ -66,8 +66,8 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="students-menu" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="calendar.html">Events Calendar </a> </li>
-                            <li> <a href="calendar-list.html">List Calendar</a> </li>
+                            <li> <a href="{{route('Students.index')}}">{{trans('admin.students')}} </a> </li>
+                            <li> <a href="{{route('Students.create')}}">{{trans('admin.AddStudents')}}</a> </li>
                         </ul>
                     </li>
 

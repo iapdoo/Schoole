@@ -32,6 +32,7 @@
                             <br>
                             <form action="{{route('Teachers.update',$Teachers->id)}}" method="post">
                                 @csrf
+                                <input type="hidden" name="id" value="{{$Teachers->id}}">
                                 <div class="form-row">
                                     <div class="col">
                                         <label for="title">{{trans('Teacher_trans.Email')}}</label>
@@ -42,7 +43,7 @@
                                     </div>
                                     <div class="col">
                                         <label for="title">{{trans('Teacher_trans.Password')}}</label>
-                                        <input type="password" name="Password" value="{{$Teachers->Password}}" class="form-control">
+                                        <input type="password" name="Password" value="" class="form-control">
                                         @error('Password')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
