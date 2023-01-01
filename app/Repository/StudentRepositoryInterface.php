@@ -9,6 +9,8 @@ interface StudentRepositoryInterface{
 
 //    // Create Student
     public function Create_Student();
+   // Get classrooms
+    public function Get_classrooms($id);
 //    // get all Specialization
 //    public function getSpecialization();
 //    // get all Specialization

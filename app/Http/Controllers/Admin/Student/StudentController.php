@@ -82,4 +82,8 @@ class StudentController extends Controller
     {
         //
     }
+    public function Get_classrooms($id)
+    {
+        return $this->Student->Get_classrooms($id);
+    }
 }

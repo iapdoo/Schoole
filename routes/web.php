@@ -92,6 +92,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
     Route::post('/Students/destroy/{id}', [StudentController::class, 'destroy'])->name('Students.destroy');
 
 
+
+    Route::get('/Get_classrooms/{id}', [StudentController::class, 'Get_classrooms'] );
+    Route::get('/Get_Sections/{id}',  [StudentController::class, 'Get_Sections'] );
+
 ############################ END Students ROUTE ######################################################################
 
 });
