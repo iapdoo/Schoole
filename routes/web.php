@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\ClassRoom\ClassRoomController;
 use App\Http\Controllers\Admin\Grade\GradeController;
 use App\Http\Controllers\Admin\Section\SectionController;
+use App\Http\Controllers\Admin\Student\PromotionController;
 use App\Http\Controllers\Admin\Student\StudentController;
 use App\Http\Controllers\Admin\Teachers\TeacherController;
 use App\Http\Controllers\HomeController;
@@ -85,19 +86,27 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
     ############################ START Students ROUTE ####################################################################
     Route::get('/Students', [StudentController::class, 'index'])->name('Students.index');
     Route::get('/Students/create', [StudentController::class, 'create'])->name('Students.create');
-    Route::get('/Students/edit/{id}', [StudentController::class, 'edit'])->name('Students.edit');
     Route::post('/Students/store', [StudentController::class, 'store'])->name('Students.store');
-    Route::post('/Students/destroy/{id}', [StudentController::class, 'destroy'])->name('Students.destroy');
+    Route::get('/Students/edit/{id}', [StudentController::class, 'edit'])->name('Students.edit');
     Route::post('/Students/update/{id}', [StudentController::class, 'update'])->name('Students.update');
     Route::post('/Students/destroy/{id}', [StudentController::class, 'destroy'])->name('Students.destroy');
-
-
-
     Route::get('/Get_classrooms/{id}', [StudentController::class, 'Get_classrooms'] );
     Route::get('/Get_Sections/{id}',  [StudentController::class, 'Get_Sections'] );
-
+    Route::get('/Students/show/{id}', [StudentController::class, 'show'])->name('Students.show');
+    Route::post('Upload_attachment', [StudentController::class, 'Upload_attachment'] )->name('Upload_attachment');
+    Route::get('Download_attachment/{studentsname}/{filename}', [StudentController::class, 'Download_attachment'] )->name('Download_attachment');
+    Route::post('Delete_attachment', [StudentController::class, 'Delete_attachment'] )->name('Delete_attachment');
 ############################ END Students ROUTE ######################################################################
+############################ START Students Promotion ROUTE ####################################################################
+    Route::get('/Promotion', [PromotionController::class, 'index'])->name('Promotion.index');
+    Route::get('/Promotion/create', [PromotionController::class, 'create'])->name('Promotion.create');
+    Route::post('/Promotion/store', [PromotionController::class, 'store'])->name('Promotion.store');
+    Route::get('/Promotion/edit/{id}', [PromotionController::class, 'edit'])->name('Promotion.edit');
+    Route::post('/Promotion/update/{id}', [PromotionController::class, 'update'])->name('Promotion.update');
+    Route::post('/Promotion/destroy/{id}', [PromotionController::class, 'destroy'])->name('Promotion.destroy');
 
+
+############################ END Students Promotion ROUTE ######################################################################
 });
 
 

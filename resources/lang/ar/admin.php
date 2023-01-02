@@ -36,5 +36,8 @@ return [
 
     'Teachers'=>'المعلمين',
     'List_Teachers'=>' قائمه المعلمين',
+    'list_students'=>' قائمه الطلاب',
     'AddStudents'=>'اضافه طالب ',
+    'Student_Edit'=>'تعديل طالب ',
+    'Students_promotion'=>'ترقيه الطلاب',
 ];
