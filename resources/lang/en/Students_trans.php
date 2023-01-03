@@ -17,7 +17,8 @@ return [
     'classrooms' => 'classrooms',
     'section' => 'section',
     'parent' => 'parent',
-    'academic_year' => 'academic_year',
+    'academic_year' => 'Academic Year',
+    'academic_year_new' => 'New Academic Year',
     'Processes' => 'Processes',
     'submit' => 'submit',
     'Close' => 'Close',
@@ -31,5 +32,17 @@ return [
     'created_at' => 'created_at',
     'Download' => 'Download',
     'delete' => 'Delete',
+    'f_grade' => 'From Grade',
+    'f_classroom' => 'Frpm Class Room',
+    'f_section' => ' From Section',
+    't_grade' => 'To Grade',
+    't_classroom' => 'To Class Room',
+    't_section' => 'To Section ',
+    'Delete_all' => 'Delete All',
+    'Deleted_ALL_Student'=>' Reterive ALL Student',
+    'Deleted_Student_all_tilte'=>'Are you sure to Reterive ALL Student?',
+    'reterive_student'=>'Reterive Student?',
+    'graduate_student'=>'Graduate Student?',
+
 
 ];

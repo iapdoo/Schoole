@@ -25,6 +25,10 @@ class RepoServiceProvider extends ServiceProvider
             'App\Repository\StudentPromotionRepositoryInterface',
             'App\Repository\PromotionRepository',
         );
+        $this->app->bind(
+            'App\Repository\StudentGraduatedRepositoryInterface',
+            'App\Repository\StudentGraduatedRepository',
+        );
     }
 
     /**

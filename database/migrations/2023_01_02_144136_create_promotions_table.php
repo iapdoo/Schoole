@@ -36,13 +36,17 @@ class CreatePromotionsTable extends Migration
 
             $table->unsignedBigInteger('to_section');
             $table->foreign('to_section')->references('id')->on('sections')->onDelete('cascade');
+
+            $table->string('academic_year');
+            $table->string('academic_year_new');
+
             $table->timestamps();
         });
     }
 
     /**
      * Reverse the migrations.
-     *
+     *academic_year_new
      * @return void
      */
     public function down()

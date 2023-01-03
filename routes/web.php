@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\ClassRoom\ClassRoomController;
 use App\Http\Controllers\Admin\Grade\GradeController;
 use App\Http\Controllers\Admin\Section\SectionController;
+use App\Http\Controllers\Admin\Student\GraduatedController;
 use App\Http\Controllers\Admin\Student\PromotionController;
 use App\Http\Controllers\Admin\Student\StudentController;
 use App\Http\Controllers\Admin\Teachers\TeacherController;
@@ -103,10 +104,21 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
     Route::post('/Promotion/store', [PromotionController::class, 'store'])->name('Promotion.store');
     Route::get('/Promotion/edit/{id}', [PromotionController::class, 'edit'])->name('Promotion.edit');
     Route::post('/Promotion/update/{id}', [PromotionController::class, 'update'])->name('Promotion.update');
-    Route::post('/Promotion/destroy/{id}', [PromotionController::class, 'destroy'])->name('Promotion.destroy');
+    Route::delete('/Promotion/destroy/{id}', [PromotionController::class, 'destroy'])->name('Promotion.destroy');
 
 
 ############################ END Students Promotion ROUTE ######################################################################
+    ############################ START Students Promotion ROUTE ####################################################################
+    Route::get('/Graduated', [GraduatedController::class, 'index'])->name('Graduated.index');
+    Route::get('/Graduated/create', [GraduatedController::class, 'create'])->name('Graduated.create');
+    Route::post('/Graduated/store', [GraduatedController::class, 'store'])->name('Graduated.store');
+    Route::get('/Graduated/edit/{id}', [GraduatedController::class, 'edit'])->name('Graduated.edit');
+    Route::post('/Graduated/update/{id}', [GraduatedController::class, 'update'])->name('Graduated.update');
+    Route::delete('/Graduated/destroy/{id}', [GraduatedController::class, 'destroy'])->name('Graduated.destroy');
+
+
+############################ END Students Promotion ROUTE ######################################################################
+
 });
 
 

@@ -10,4 +10,5 @@ return [
    'no'=>'This Dose Not Available ',
    'noPermation'=>'Can Not Delete This Has Child ',
    'exists'=>'This Name Is Used ',
+   'NoData'=>'This Section Has Not Any Information',
 ];

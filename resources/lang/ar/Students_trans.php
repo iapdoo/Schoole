@@ -34,6 +34,19 @@ return [
     'Download' => 'تحميل',
     'created_at' => 'اضيف في',
     'filename' => 'اسم الملف',
-
+    'academic_year' => ' السنه الدراسيه السابقه',
+    'academic_year_new' => 'السنه الدراسيه الحاليه',
+    'f_grade' => 'المرحله الدراسيه السابقه',
+    'f_classroom' => 'الصف الدراسي السابق ',
+    'f_section' => 'القسم الدراسي السابق',
+    't_grade' => 'المرحله الدراسيه الحاليه',
+    't_classroom' => 'الصف الدراسي الحالي ',
+    't_section' => 'القسم الدراسي الحالي ',
+    'name'=>'الاسم',
+    'Delete_all'=>'تراجع الكل',
+    'Deleted_ALL_Student'=>' تراجع  كل الطلاب',
+    'Deleted_Student_all_tilte'=>' هل انت متاكد من تراجع  كل الطلاب؟',
+    'reterive_student'=>'ارجاع الطالب',
+    'graduate_student'=>'تخرج الطالب',
 
 ];

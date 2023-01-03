@@ -37,6 +37,7 @@ return [
     'AddStudents'=>'Add New Students',
     'Student_Edit'=>'Student Edit',
     'Students_promotion'=>'Students Promotion',
+    'manage_promotion'=>'Manage Students Promotion',
 
 
 ];
