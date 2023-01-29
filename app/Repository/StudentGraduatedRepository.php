@@ -35,4 +35,9 @@ class StudentGraduatedRepository implements StudentGraduatedRepositoryInterface
         toastr()->error(trans('massage.NoData'));
         return redirect()->route('Graduated.index');
     }
+    public function returnData($request){
+        Student::onlyTrashed()->where('id',$request->id)->first()->restore();
+        toastr()->error(trans('massage.success'));
+        return redirect()->back();
+    }
 }

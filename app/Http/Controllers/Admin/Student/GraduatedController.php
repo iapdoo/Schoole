@@ -29,23 +29,11 @@ class GraduatedController extends Controller
         return $this->Graduated->softDelete($request);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //
@@ -60,7 +48,7 @@ class GraduatedController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return $this->Graduated->returnData($request);
     }
 
     /**
