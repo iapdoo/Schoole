@@ -116,7 +116,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
     Route::post('/Graduated/update/{id}', [GraduatedController::class, 'update'])->name('Graduated.update');
     Route::delete('/Graduated/destroy/{id}', [GraduatedController::class, 'destroy'])->name('Graduated.destroy');
 
-
+    Route::resource('Fees', 'Admin\Student\FeesController');
+    Route::resource('Fees_Invoices', 'Admin\Student\FeesInvoicesController');
+    Route::resource('receipt_students', 'Admin\Student\ReceiptStudentsController');
 ############################ END Students Promotion ROUTE ######################################################################
 
 });

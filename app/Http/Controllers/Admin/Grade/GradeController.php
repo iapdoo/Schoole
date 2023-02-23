@@ -34,6 +34,7 @@ class GradeController extends Controller
             return redirect()->route('Grades.index');
 
         }catch (\Exception $exception){
+
             return redirect()->back()->withErrors(['error'=>trans('massage.error')]);
         }
         $Grade=new Grade();
